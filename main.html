@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nick bday</title>
+  <style>
+    section {
+      height: 100vh;
+      overflow: hidden;
+      border-bottom: 2px solid #ccc;
+    }
+  </style>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+ <section id="page1"></section>
+  <section id="page2"></section>
+  <section id="page3"></section> 
+ <script>
+    function loadSection(id, url, jsFile = null) {
+      fetch(url)
+        .then(res => res.text())
+        .then(data => {
+          const container = document.getElementById(id);
+          container.innerHTML = data;
+            if (id === "page3") {
+                container.classList.add("cloud-page");
+            }
+          if (jsFile) {
+            const script = document.createElement("script");
+            script.src = jsFile;
+            script.defer = true;
+            document.body.appendChild(script);
+          }
+        });
+    }
+
+    loadSection("page1", "cake2.html", "cake2.js");
+    loadSection("page2", "letter.html", "letter.js");  
+    loadSection("page3", "cloud.html");
+
+  </script>
+
+</body>
+</html>

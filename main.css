@@ -1,0 +1,534 @@
+/* === Global Body Styles === */
+body {
+  background-color: #eda2ac; /* Soft lavender for a romantic, dreamy feel */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Cake with Candle Styles ===== */
+
+.cake {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -125px;
+}
+
+.plate {
+  width: 270px;
+  height: 110px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  box-shadow: 0 1px 0 #adadad, 0 4px 0 #adadad, 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cake > * {
+  position: absolute;
+}
+
+.layer {
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #a88679;
+  box-shadow:
+    0 2px 0px #b19588,
+    0 4px 0px #8b7a6e,
+    0 6px 0px #89786c,
+    0 8px 0px #867469,
+    0 10px 0px #846066,
+    0 12px 0px #825d62,
+    0 14px 0px #805a5f,
+    0 16px 0px #7d565b,
+    0 18px 0px #7d565b,
+    0 20px 0px #7d565b,
+    0 22px 0px #7d565b,
+    0 24px 0px #7d565b,
+    0 26px 0px #7d565b,
+    0 28px 0px #7d565b,
+    0 30px 0px #7d565b;
+}
+
+.layer-top { top: 0; }
+.layer-middle { top: 33px; }
+.layer-bottom { top: 66px; }
+
+.icing {
+  top: 2px;
+  left: 5px;
+  background-color: #fefae9;
+  width: 240px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.icing:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  bottom: 6px;
+  left: 5px;
+  background-color: #f4ead5;
+  box-shadow:
+    0 0 4px #f6efd9,
+    0 0 4px #f6efd9,
+    0 0 4px #f6efd9;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.drip {
+  display: block;
+  background-color: #fefae9;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: absolute;
+}
+
+.drip1 {
+  top: 53px;
+  left: 5px;
+  transform: skewY(15deg);
+  height: 48px;
+  width: 40px;
+}
+
+.drip2 {
+  top: 69px;
+  left: 181px;
+  transform: skewY(-15deg);
+  width: 50px;
+  height: 60px;
+}
+
+.drip3 {
+  top: 54px;
+  left: 90px;
+  width: 80px;
+  height: 60px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.candle {
+  background-color: #94171f;
+  width: 14px;
+  height: 50px;
+  border-radius: 8px / 4px;
+  top: -20px;
+  left: 50%;
+  margin-left: -8px;
+  z-index: 10;
+  position: absolute;
+}
+
+.candle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cc2b2e;
+}
+
+.flame {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  margin-left: -5px;
+  width: 15px;
+  height: 30px;
+  background: radial-gradient(ellipse at center, #ff0 30%, orange 80%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 0 15px 5px rgb(255, 200, 0);
+  transform-origin: 50% 90%;
+  animation: flicker 1s ease-in-out alternate infinite;
+  transition: opacity 2s ease;
+  z-index: 20;
+}
+
+@keyframes flicker {
+  0% {
+    transform: skewX(5deg);
+    box-shadow:
+      0 0 10px rgba(255, 165, 0, 0.2),
+      0 0 20px rgba(255, 165, 0, 0.2),
+      0 0 60px rgba(255, 165, 0, 0.2),
+      0 0 80px rgba(255, 165, 0, 0.2);
+  }
+  25% {
+    transform: skewX(-5deg);
+    box-shadow:
+      0 0 10px rgba(255, 165, 0, 0.5),
+      0 0 20px rgba(255, 165, 0, 0.5),
+      0 0 60px rgba(255, 165, 0, 0.5),
+      0 0 80px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    transform: skewX(10deg);
+    box-shadow:
+      0 0 10px rgba(255, 165, 0, 0.3),
+      0 0 20px rgba(255, 165, 0, 0.3),
+      0 0 60px rgba(255, 165, 0, 0.3),
+      0 0 80px rgba(255, 165, 0, 0.3);
+  }
+  75% {
+    transform: skewX(-10deg);
+    box-shadow:
+      0 0 10px rgba(255, 165, 0, 0.4),
+      0 0 20px rgba(255, 165, 0, 0.4),
+      0 0 60px rgba(255, 165, 0, 0.4),
+      0 0 80px rgba(255, 165, 0, 0.4);
+  }
+  100% {
+    transform: skewX(5deg);
+    box-shadow:
+      0 0 10px rgba(255, 165, 0, 0.5),
+      0 0 20px rgba(255, 165, 0, 0.5),
+      0 0 60px rgba(255, 165, 0, 0.5),
+      0 0 80px rgba(255, 165, 0, 0.5);
+  }
+}
+
+/* Flame fade out */
+.flame.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Button styling for cake page */
+#tapButton {
+  display: block;
+  margin: 50px auto 0;
+  padding: 10px 25px;
+  font-size: 14px;
+  text-transform: uppercase; 
+  font-weight: 800;
+  border: none;
+  background-color: #a00a0a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#tapButton:hover {
+  background-color: #cc2b2e;
+}
+
+/* ===== Envelope with Letter Styles ===== */
+
+#envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+  background-color: #d9534f; /* Warm romantic red */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  border-top: 98px solid #d9534f;
+  transform-origin: top;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+}
+
+.pocket {
+  border-left: 140px solid #f7dcdb;
+  border-right: 140px solid  #f7dcdb;
+  border-bottom: 90px solid #f7dcdb;
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+  font-family: "Dancing Script", cursive;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  background-color: #ffe6e6;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.words.line1 { top: 10%; }
+.words.line2 { top: 30%; }
+.words.line3 { top: 50%; }
+.words.line4 { top: 70%; }
+
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.close .letter {
+  transform: translateY(0);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.open .letter {
+  transform: translateY(-100px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  pointer-events: none;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #cc2b2e;
+  border-radius: 50px 50px 0 0;
+  pointer-events: none;
+}
+
+.heart:before {
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  animation: none;
+}
+
+/* Heart animations */
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideUp {
+  0% { top: 0; }
+  100% { top: -600px; }
+}
+
+@keyframes sideSway {
+  0% { margin-left: 0; }
+  100% { margin-left: 50px; }
+}
+
+/* Envelope Wrapper and Reset Button */
+.envlope-wrapper {
+  height: 380px;
+}
+
+.reset {
+  text-align: center;
+}
+
+.reset button {
+  font-weight: 800;
+  border: none;
+  background-color: #a00a0a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 10px; 
+}
+
+.reset button:hover {
+  background-color: #cc2b2e;
+  color: #fff;
+}
+/* ========== Cloud Page Styles ========== */
+.cloud-page {
+  background: #eda2ac;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.cloud-page .scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: push 3s infinite alternate ease-in-out;
+}
+
+.cloud-page .cloud {
+  position: relative;
+  width: 180px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  box-shadow:
+    -50px 0 white,
+    -25px -30px white,
+     25px -30px white,
+     50px 0 white,
+     0px -40px white;
+}
+
+.cloud-page .eye {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  animation: blink 4s infinite;
+}
+
+.cloud-page .eye.left {
+  left: 50px;
+}
+.cloud-page .eye.right {
+  right: 50px;
+}
+
+.cloud-page .blush {
+  width: 14px;
+  height: 14px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  opacity: 0;
+  animation: blushFade 4s ease-in-out forwards infinite;
+}
+.cloud-page .left-blush {
+  left: -50px;
+}
+.cloud-page .right-blush {
+  right: -50px;
+}
+
+@keyframes blushFade {
+  0%   { opacity: 0; transform: scale(0.8); }
+  20%  { opacity: 1; transform: scale(1); }
+  80%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes blink {
+  0%, 95%, 100%   { height: 20px; }
+  96%, 97%, 98%, 99% { height: 4px; }
+}
+
+.cloud-page .message {
+  font-size: 28px;
+  color: #355;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+@keyframes push {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(25px); }
+}
