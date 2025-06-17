@@ -6,20 +6,40 @@
   <style>
     section {
       height: 100vh;
-      overflow: hidden;
-      border-bottom: 2px solid #ccc;
+      overflow: hidden; 
     }
   </style>
     <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-
+    <audio id="bgMusic" autoplay loop >
+        <source src="HBD.mp3" type="audio/mpeg" />  
+    </audio>
  <section id="page1"></section>
   <section id="page2"></section>
   <section id="page3"></section> 
- <script>
+ <script>   
+ window.addEventListener("load", () => { 
+    Swal.fire({
+      title: '🎵 Tap anywhere to start music!',
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      background: '#fefae9',
+      color: '#a00a0a',
+      allowOutsideClick: false,
+      didOpen: () => { 
+        document.addEventListener('click', () => {
+          const music = document.getElementById("bgMusic");
+          if (music && music.paused) music.play();
+          Swal.close();  
+        }, { once: true });
+      }
+    });
+  });
     function loadSection(id, url, jsFile = null) {
       fetch(url)
         .then(res => res.text())
