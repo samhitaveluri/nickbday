@@ -1,17 +1,15 @@
-/* === Global Body Styles === */
 body {
-  background-color: #eda2ac; /* Soft lavender for a romantic, dreamy feel */
+  background-color: #eda2ac;  
   margin: 0;
   font-family: Arial, sans-serif;
 }
-
-/* ===== Cake with Candle Styles ===== */
+ 
 
 .cake {
   position: absolute;
   width: 250px;
   height: 200px;
-  top: 50%;
+  top: 45%;
   left: 50%;
   margin-top: -70px;
   margin-left: -125px;
@@ -198,15 +196,12 @@ body {
       0 0 60px rgba(255, 165, 0, 0.5),
       0 0 80px rgba(255, 165, 0, 0.5);
   }
-}
-
-/* Flame fade out */
+} 
 .flame.fade-out {
   opacity: 0;
   pointer-events: none;
 }
-
-/* Button styling for cake page */
+ 
 #tapButton {
   display: block;
   margin: 50px auto 0;
@@ -224,9 +219,60 @@ body {
 
 #tapButton:hover {
   background-color: #cc2b2e;
+} 
+.counter-wrapper {
+  position: absolute;
+  top: calc(50% + 140px);  
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-/* ===== Envelope with Letter Styles ===== */
+.abc {
+  font-weight: bolder;
+  color: #fefae9;
+  font-family: "Comic Sans MS", cursive;
+  margin-bottom: 5px;
+}
+
+.counter {
+  font-size: 75px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(90deg, #c44345, #a00a0a, #c44345);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-background {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    #ffe680 0%,
+    transparent 35%,
+    #ffe680 65%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  filter: blur(10px);
+  animation: rotateGlow 6s linear infinite;
+  transition: opacity 1s ease;
+}
+
+@keyframes rotateGlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Envelope */
 
 #envelope {
   position: relative;
@@ -237,7 +283,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   top: 150px;
-  background-color: #d9534f; /* Warm romantic red */
+  background-color: #d9534f;  
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -373,8 +419,7 @@ body {
   opacity: 0;
   animation: none;
 }
-
-/* Heart animations */
+ 
 .a1 {
   left: 20%;
   transform: scale(0.6);
@@ -411,8 +456,7 @@ body {
   0% { margin-left: 0; }
   100% { margin-left: 50px; }
 }
-
-/* Envelope Wrapper and Reset Button */
+ 
 .envlope-wrapper {
   height: 380px;
 }
@@ -439,14 +483,14 @@ body {
   background-color: #cc2b2e;
   color: #fff;
 }
-/* ========== Cloud Page Styles ========== */
+/* Cloud */
 .cloud-page {
   background: #eda2ac;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   font-family: "Comic Sans MS", cursive;
 }
 
