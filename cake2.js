@@ -1,7 +1,20 @@
- 
-   
-  let firstClick = true;
+let firstClick = true;
+const target = 25;
+let current = 0;
+const counter = document.getElementById("counter"); 
+const interval = setInterval(() => {
+    current++;
+    counter.textContent = current;
 
+    if (current >= target) {
+    clearInterval(interval);
+    confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 }
+    });document.getElementById("glowBg").style.opacity = "1";
+    }   
+}, 80); 
   document.getElementById('tapButton').addEventListener('click', () => {
     if (firstClick) {
       firstClick = false;
