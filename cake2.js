@@ -20,6 +20,7 @@ const interval = setInterval(() => {
       firstClick = false;
       Swal.fire({
         title: 'Did you make a wish?', 
+        html: '<small>Make a wish, then tap BLOW</small>',
         imageUrl: 'sqiudward.jpg',  
         imageWidth: '80%',     
         imageHeight: 'auto',
