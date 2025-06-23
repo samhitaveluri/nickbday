@@ -483,6 +483,64 @@ body {
   background-color: #cc2b2e;
   color: #fff;
 }
+.gift-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#gift {
+  padding: 12px 50px;
+  font-size: 24px;
+  background: linear-gradient(to bottom, #ffe6e6);
+  border: none;
+  border-radius: 20px;
+  color:#a00a0a;
+  box-shadow: 0 0px 8px rgb(252, 226, 239);
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  margin-top: 20px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect */
+#gift:hover {
+  transform: scale(1.05);
+  box-shadow:  0 0px 16px rgb(252, 226, 239);
+} 
+#gift::before {
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+#gift::after {
+  height: 100%;
+  width: 6px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+
+#giftVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+  object-fit: cover;
+  background-color: black;
+  z-index: 9999;
+  display: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
 /* Cloud */
 .cloud-page {
   background: #eda2ac;
@@ -490,7 +548,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 75vh;
   font-family: "Comic Sans MS", cursive;
 }
 
@@ -563,9 +621,8 @@ body {
   96%, 97%, 98%, 99% { height: 4px; }
 }
 
-.cloud-page .message {
-  font-size: 28px;
-  color: #355;
+.cloud-page .message { 
+  color: #fefae9;
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -575,4 +632,4 @@ body {
 @keyframes push {
   0%   { transform: translateX(0); }
   100% { transform: translateX(25px); }
-}
+} 
