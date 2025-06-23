@@ -20,3 +20,16 @@ $(document).ready(function () {
     envelope.addClass("close").removeClass("open");
   }
 });
+ const giftBtn = document.getElementById('gift');
+  const giftVideo = document.getElementById('giftVideo');
+
+  giftBtn.addEventListener('click', () => {
+    giftVideo.src = 'bday wishes.mp4';  
+    giftVideo.style.display = 'block';
+    giftVideo.play();
+  });
+
+  giftVideo.addEventListener('ended', () => {
+    giftVideo.style.display = 'none';
+    giftVideo.src = ''; 
+  });
